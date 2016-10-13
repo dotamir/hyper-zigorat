@@ -1,5 +1,5 @@
 // Consts
-const backgroundColor = '#1b1b1b';
+const backgroundColor = '#111';
 const foregroundColor = '#fff';
 const borderColor = backgroundColor;
 const darkerBlack = '#000';
@@ -46,7 +46,9 @@ exports.decorateConfig = (config) => (
     backgroundColor,
     foregroundColor,
     borderColor: borderColor,
-    cursorColor: colorYellow,
+    cursorColor: lightYellow,
+    fontSize: 14,
+    cursorShape: 'BLOCK',
     colors,
     css: `
     ${config.css || ''}
@@ -113,7 +115,7 @@ exports.middleware = () => (next) => (action) => {
     case 'CONFIG_RELOAD':
       action.config.foregroundColor = foregroundColor;
       action.config.backgroundColor = backgroundColor;
-      action.config.cursorColor = foregroundColor;
+      action.config.cursorColor = lightYellow;
       action.config.colors = colors;
   }
   next(action);
