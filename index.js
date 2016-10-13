@@ -1,8 +1,8 @@
 // Consts
-const backgroundColor = '#000000';
+const backgroundColor = '#333333';
 const foregroundColor = '#fff';
 const borderColor = backgroundColor;
-const darkerBlack = '#333';
+const darkerBlack = '#000'; 
 
 // Colors
 const colorRed = '#ff0000';
@@ -59,6 +59,7 @@ exports.decorateConfig = (config) => (
     }
     .tab_tab {
       color: ${colorYellow} !important;
+      background-color: #000 !important;
       background-color: ${darkerBlack} !important;
       border: 0 !important;
       border-right: 1px solid transparent !important;
@@ -66,6 +67,7 @@ exports.decorateConfig = (config) => (
       border-left: 1px solid transparent !important;
     }
     .tab_active {
+      
       background-color: ${backgroundColor} !important;
       height: calc(100% + 1px);
       border-left: 1px solid ${borderColor} !important;
@@ -74,12 +76,14 @@ exports.decorateConfig = (config) => (
     .tab_tab:last-child {
       border-right: 1px solid transparent !important;
     }
+    .header_i1rech{
+      top:0px !important;
+    }
     .tab_active::before {
       content: '';
       display: inline-block;
-
       top: 0px;
-      width: 5px;
+      width: auto;
       height: 5px;
       margin-left: 15px;
       position: relative;
@@ -104,14 +108,14 @@ exports.decorateConfig = (config) => (
 
 // Development middleware for HMR
 exports.middleware = () => (next) => (action) => {
-    /* eslint-disable no-param-reassign, default-case */
-    switch (action.type) {
-        case 'CONFIG_LOAD':
-        case 'CONFIG_RELOAD':
-            action.config.foregroundColor = foregroundColor;
-            action.config.backgroundColor = backgroundColor;
-            action.config.cursorColor = foregroundColor;
-            action.config.colors = colors;
-    }
-    next(action);
+  /* eslint-disable no-param-reassign, default-case */
+  switch (action.type) {
+    case 'CONFIG_LOAD':
+    case 'CONFIG_RELOAD':
+      action.config.foregroundColor = foregroundColor;
+      action.config.backgroundColor = backgroundColor;
+      action.config.cursorColor = foregroundColor;
+      action.config.colors = colors;
+  }
+  next(action);
 };
