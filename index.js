@@ -1,8 +1,8 @@
 // Consts
-const backgroundColor = '#333333';
+const backgroundColor = '#1b1b1b';
 const foregroundColor = '#fff';
 const borderColor = backgroundColor;
-const darkerBlack = '#000'; 
+const darkerBlack = '#000';
 
 // Colors
 const colorRed = '#ff0000';
@@ -58,7 +58,6 @@ exports.decorateConfig = (config) => (
       background-color: ${darkerBlack} !important;
     }
     .tab_tab {
-      color: ${colorYellow} !important;
       background-color: #000 !important;
       background-color: ${darkerBlack} !important;
       border: 0 !important;
@@ -67,17 +66,17 @@ exports.decorateConfig = (config) => (
       border-left: 1px solid transparent !important;
     }
     .tab_active {
-      
       background-color: ${backgroundColor} !important;
       height: calc(100% + 1px);
-      border-left: 1px solid ${borderColor} !important;
-      border-right: 1px solid ${borderColor} !important;
     }
     .tab_tab:last-child {
       border-right: 1px solid transparent !important;
     }
     .header_i1rech{
       top:0px !important;
+    }
+    .tabs_borderShim{
+      border: none !important;
     }
     .tab_active::before {
       content: '';
