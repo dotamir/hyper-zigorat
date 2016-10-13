@@ -41,8 +41,8 @@ const colors = {
   darkerBlack: darkerBlack
 };
 
-exports.decorateConfig = (config) => (
-  Object.assign({}, config, {
+exports.decorateConfig = (config) => {
+  return Object.assign({}, config, {
     backgroundColor,
     foregroundColor,
     borderColor: borderColor,
@@ -105,7 +105,7 @@ exports.decorateConfig = (config) => (
     }
   `
   })
-);
+};
 
 // Development middleware for HMR
 exports.middleware = () => (next) => (action) => {
