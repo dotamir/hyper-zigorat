@@ -83,24 +83,9 @@ exports.decorateConfig = (config) => {
     .tabs_borderShim{
       border: none !important;
     }
-    .tab_active::before {
-      content: '';
-      display: inline-block;
-      top: 0px;
-      width: auto;
-      height: 5px;
-      margin-left: 15px;
-      position: relative;
-      border-radius: 20px;
-      background: #ffff00 !important;
-      border-bottom: none !important;
-    }
     .tab_text {
       float: right !important;
       border-color: transparent !important;
-    }
-    .text_12ra3t4 {
-      width: 93% !important;
     }
     .tab_icon {
       background-color: rgba(255, 255, 255, .025);
