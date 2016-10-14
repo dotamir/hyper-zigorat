@@ -1,23 +1,23 @@
 // Consts
-const backgroundColor = '#1b1b1b';
+const backgroundColor = '#111111';
 const foregroundColor = '#fff';
 const borderColor = backgroundColor;
 const darkerBlack = '#000';
 
 // Colors
-const colorRed = '#ff0000';
+const colorRed = '#F80012';
 const colorBlack = backgroundColor;
 const colorGreen = '#33ff00';
 const colorYellow = '#ffff00';
-const colorBlue = '#0066ff';
-const colorMagenta = '#cc00ff';
-const colorCyan = '#00ffff';
-const colorWhite = '#d0d0d0';
-const lightBlack = '#808080';
-const lightRed = '#ff0000';
+const colorBlue = '#0A64A4';
+const colorMagenta = '#24577B';
+const colorCyan = '#65A5D1';
+const colorWhite = '#F1F1F1';
+const lightBlack = '#555';
+const lightRed = '#F80012';
 const lightGreen = '#33ff00';
-const lightYellow = '#ffff00';
-const lightBlue = '#0066ff';
+const lightYellow = '#E6FC3F';
+const lightBlue = '#3E94D1';
 const lightMagenta = '#cc00ff';
 const lightCyan = '#00ffff';
 const lightWhite = '#ffffff';
@@ -25,28 +25,30 @@ const lightWhite = '#ffffff';
 const colors = {
   black: colorBlack,
   red: colorRed,
-  blue: colorBlue,
   green: colorGreen,
   yellow: colorYellow,
+  blue: colorBlue,
   magenta: colorMagenta,
   cyan: colorCyan,
   white: colorWhite,
-  lightBlue: lightBlue,
   lightBlack: lightBlack,
-  lightCyan: lightCyan,
-  lightWhite: lightWhite,
-  lightMagenta: lightMagenta,
+  lightRed: lightRed,
   lightGreen: lightGreen,
   lightYellow: lightYellow,
-  darkerBlack: darkerBlack
+  lightBlue: lightBlue,
+  lightMagenta: lightMagenta,
+  lightCyan: lightCyan,
+  lightWhite: lightWhite
 };
 
-exports.decorateConfig = (config) => (
-  Object.assign({}, config, {
+exports.decorateConfig = (config) => {
+  return Object.assign({}, config, {
     backgroundColor,
     foregroundColor,
     borderColor: borderColor,
-    cursorColor: colorYellow,
+    cursorColor: lightYellow,
+    fontSize: 14,
+    cursorShape: 'BLOCK',
     colors,
     css: `
     ${config.css || ''}
@@ -58,7 +60,7 @@ exports.decorateConfig = (config) => (
       background-color: ${darkerBlack} !important;
     }
     .tab_tab {
-      background-color: #000 !important;
+      background-color: ${darkerBlack} !important;
       background-color: ${darkerBlack} !important;
       border: 0 !important;
       border-right: 1px solid transparent !important;
@@ -68,6 +70,9 @@ exports.decorateConfig = (config) => (
     .tab_active {
       background-color: ${backgroundColor} !important;
       height: calc(100% + 1px);
+      box-shadow: 0 -3px 0px rgba(0, 0, 0, 0.3) inset !important;
+      border-right: none !important;
+      border-left: none !important;
     }
     .tab_tab:last-child {
       border-right: 1px solid transparent !important;
@@ -78,24 +83,9 @@ exports.decorateConfig = (config) => (
     .tabs_borderShim{
       border: none !important;
     }
-    .tab_active::before {
-      content: '';
-      display: inline-block;
-      top: 0px;
-      width: auto;
-      height: 5px;
-      margin-left: 15px;
-      position: relative;
-      border-radius: 20px;
-      background: #ffff00 !important;
-      border-bottom: none !important;
-    }
     .tab_text {
       float: right !important;
       border-color: transparent !important;
-    }
-    .text_12ra3t4 {
-      width: 93% !important;
     }
     .tab_icon {
       background-color: rgba(255, 255, 255, .025);
@@ -103,7 +93,7 @@ exports.decorateConfig = (config) => (
     }
   `
   })
-);
+};
 
 // Development middleware for HMR
 exports.middleware = () => (next) => (action) => {
@@ -113,7 +103,7 @@ exports.middleware = () => (next) => (action) => {
     case 'CONFIG_RELOAD':
       action.config.foregroundColor = foregroundColor;
       action.config.backgroundColor = backgroundColor;
-      action.config.cursorColor = foregroundColor;
+      action.config.cursorColor = lightYellow;
       action.config.colors = colors;
   }
   next(action);
