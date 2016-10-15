@@ -47,7 +47,7 @@ exports.decorateConfig = (config) => {
     foregroundColor,
     borderColor: borderColor,
     cursorColor: lightYellow,
-    fontSize: 14,
+    fontSize: 13,
     cursorShape: 'BLOCK',
     colors,
     css: `
