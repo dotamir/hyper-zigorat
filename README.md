@@ -1,11 +1,10 @@
-A _minimal_ Syntax theme for [HyperTerm](https://hyper.is).
+> A _minimal_ Syntax theme for [HyperTerm](https://hyper.is).
 
-## ☀️ Install
-first install package from `npm`
-```bash
-$ npm install hyperterm-zigorat
-```
-## 🎹 Usage
+## Screenshot
+![screenshot](Screenshot.png)
+
+
+## Install
 Add `hyperterm-zigorat` to your plugins in `~/.hyper.js`, like so:
 
 `~/.hyper.js`:
@@ -15,3 +14,6 @@ plugins: [
 ]
 ```
 🍻 enjoy
+
+# License
+MIT
