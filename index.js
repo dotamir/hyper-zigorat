@@ -90,6 +90,7 @@ exports.decorateConfig = (config) => {
     .tab_icon {
       background-color: rgba(255, 255, 255, .025);
       opacity: 1;
+      transform: scale(1.2)
     }
   `
   })
