@@ -1,9 +1,12 @@
 {
-  "name": "hyperterm-zigorat",
-  "version": "0.0.7",
+  "name": "hyper-zigorat",
+  "version": "0.2.0",
   "description": "",
   "keywords": [
-    "hyperterm"
+      "hyper",
+      "hyperterm",
+      "syntax",
+      "theme"
   ],
   "dependencies": {},
   "author": "Amir (@dotamir)",
