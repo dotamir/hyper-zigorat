@@ -10,5 +10,9 @@
   ],
   "dependencies": {},
   "author": "Amir (@dotamir)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotamir/hyper-zigorat.git"
+  },
   "license": "MIT"
 }
